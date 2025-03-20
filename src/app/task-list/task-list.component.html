@@ -1,8 +1,8 @@
 <div>
   <ul>
-    @for (task of tasks(); track task.id; let o = $odd; let e = $even) {
+    @for (task of tasks(); track task.id; let o = $odd; let e = $even;let i = $index) {
       <li [ngClass]="{ 'odd-row': o, 'even-row': e }">
-        ID: {{ task.id }} - {{ task.title }} - {{ task.completed ? 'Completed' : 'Pending' }}
+        ID: {{ task.id }} (index {{i}}) - {{ task.title }} - {{ task.completed ? 'Completed' : 'Pending' }}
         @if (!task.completed) {
           <button (click)="completeTask(task.id)">Complete</button>
         }

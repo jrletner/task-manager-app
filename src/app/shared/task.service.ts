@@ -14,7 +14,7 @@ export class TaskService {
     { id: 3, title: 'Task 3', completed: false },
   ]);
 
-  // METHODS
+  // CRUD METHODS
 
   // method to get tasks
   getTasks() {

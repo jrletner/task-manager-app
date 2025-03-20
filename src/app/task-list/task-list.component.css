@@ -1,3 +1,14 @@
+/* Styles for odd rows */
+.odd-row {
+  background-color: #f0f8ff; /* Light blue */
+}
+
+/* Styles for even rows */
+.even-row {
+  background-color: #f8f8f8; /* Light gray */
+}
+
+/* Other existing styles */
 button {
   margin-right: 10px;
   padding: 5px 10px;
@@ -34,6 +45,5 @@ li {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #f8f8f8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }

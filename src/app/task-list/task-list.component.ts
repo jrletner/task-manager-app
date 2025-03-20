@@ -2,12 +2,13 @@
 import { Component, signal } from '@angular/core';
 import { TaskService } from '../shared/task.service';
 import { Task } from '../shared/task.model';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css'],
-  imports: [],
+  imports: [NgClass],
 })
 export class TaskListComponent {
   constructor(private taskService: TaskService) {}
@@ -16,6 +17,8 @@ export class TaskListComponent {
     { id: 1, title: 'Task 1', completed: false },
     { id: 2, title: 'Task 2', completed: false },
     { id: 3, title: 'Task 3', completed: false },
+    { id: 4, title: 'Task 4', completed: false },
+    { id: 5, title: 'Task 5', completed: false },
   ]);
 
   // method to delete a task

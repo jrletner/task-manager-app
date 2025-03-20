@@ -1,32 +1,39 @@
 button {
-    margin-right: 10px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #5a67d8;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  button:hover {
-    background-color: #434aa8;
-  }
-  
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  }
-  
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #5a67d8;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #434aa8;
+}
+
+.delete {
+  background-color: rgb(212, 78, 78);
+}
+
+.delete:hover {
+  background-color: rgb(243, 69, 69);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

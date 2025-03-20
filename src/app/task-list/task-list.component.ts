@@ -1,34 +1,51 @@
-// task-list.component.ts
+// task-list.component.ts (using signals)
 import { Component, signal } from '@angular/core';
-import { TaskComponent } from "../task/task.component";
+import { TaskService } from '../shared/task.service';
+import { Task } from '../shared/task.model';
 
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css'],
-  imports: [TaskComponent]
+  imports: [],
 })
 export class TaskListComponent {
-  tasks = [
-    { title: 'Task 1', completed: false },
-    { title: 'Task 2', completed: true },
-    { title: 'Task 3', completed: false },
-  ];
+  constructor(private taskService: TaskService) {}
 
-  
-  filter = 'All';
+  tasks = signal<Task[]>([
+    { id: 1, title: 'Task 1', completed: false },
+    { id: 2, title: 'Task 2', completed: false },
+    { id: 3, title: 'Task 3', completed: false },
+  ]);
 
-  get filteredTasks() {
-    if (this.filter === 'Completed') {
-      return this.tasks.filter(task => task.completed);
-    }
-    if (this.filter === 'Pending') {
-      return this.tasks.filter(task => !task.completed);
-    }
-    return this.tasks;
+  // get tasks() {
+  //   return this.taskService.tasks();
+  // }
+
+  // method to delete a task
+  deleteTask(id: number) {
+    this.tasks.update((currentTasks) =>
+      currentTasks.filter((task) => task.id != id)
+    );
   }
 
-  changeFilter(status: string) {
-    status = this.filter;
+  // deleteTask(id: number) {
+  //   this.taskService.deleteTask(id)
+  // }
+
+  // method to complete a task
+  completeTask(id: number) {
+    this.tasks.update((currentTasks) => {
+      return currentTasks.map((task) => {
+        if (task.id === id) {
+          task.completed = true;
+        }
+        return task;
+      });
+    });
   }
+
+  // completeTask(id: number) {
+  //   this.taskService.completeTask(id)
+  // }
 }

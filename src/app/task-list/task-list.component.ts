@@ -18,20 +18,12 @@ export class TaskListComponent {
     { id: 3, title: 'Task 3', completed: false },
   ]);
 
-  // get tasks() {
-  //   return this.taskService.tasks();
-  // }
-
   // method to delete a task
   deleteTask(id: number) {
     this.tasks.update((currentTasks) =>
       currentTasks.filter((task) => task.id != id)
     );
   }
-
-  // deleteTask(id: number) {
-  //   this.taskService.deleteTask(id)
-  // }
 
   // method to complete a task
   completeTask(id: number) {
@@ -45,7 +37,20 @@ export class TaskListComponent {
     });
   }
 
+  // SERVICE METHODS
+
+  // method to get tasks
+  // get tasks() {
+  //   return this.taskService.tasks();
+  // }
+
+  // method to delete a task
+  // deleteTask(id: number) {
+  //   this.taskService.deleteTask(id);
+  // }
+
+  // method to complete a task
   // completeTask(id: number) {
-  //   this.taskService.completeTask(id)
+  //   this.taskService.completeTask(id);
   // }
 }
